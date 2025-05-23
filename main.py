@@ -3,7 +3,9 @@ from stats import char_count
 from stats import sorted_dict
 import sys
 def main():
-
+    # Check if the correct number of command line arguments is provided
+    # If not, print usage message and exit
+    # If the correct number of arguments is provided, proceed with the program
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
@@ -21,6 +23,8 @@ def main():
             print(f"{entry['char']}: {entry['num']}")
         print("============= END ===============")
 
+# Function to read the book text from a file
+# Takes the file path as an argument and returns the text
 def get_book_text(book):
     with open(book) as f:
         text = f.read()
